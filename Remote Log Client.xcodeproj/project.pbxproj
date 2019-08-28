@@ -13,9 +13,12 @@
 		8AA61AC12316487D00BB7B93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AA61ABF2316487D00BB7B93 /* Main.storyboard */; };
 		8AA61ACE2316570D00BB7B93 /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA61ACD2316570D00BB7B93 /* Peer.swift */; };
 		8AA61AD223165B8000BB7B93 /* BeepService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA61AD123165B8000BB7B93 /* BeepService.swift */; };
+		E0932198D8403889CBEFB065 /* Pods_Remote_Log_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5208565BA380EA5D9141CA /* Pods_Remote_Log_Client.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		205020729D29D07B38589A23 /* Pods-Remote Log Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remote Log Client.release.xcconfig"; path = "Target Support Files/Pods-Remote Log Client/Pods-Remote Log Client.release.xcconfig"; sourceTree = "<group>"; };
+		5C5208565BA380EA5D9141CA /* Pods_Remote_Log_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Remote_Log_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA61AB62316487B00BB7B93 /* Remote Log Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Remote Log Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA61AB92316487B00BB7B93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AA61ABB2316487B00BB7B93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,6 +28,7 @@
 		8AA61AC32316487D00BB7B93 /* Remote_Log_Client.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Remote_Log_Client.entitlements; sourceTree = "<group>"; };
 		8AA61ACD2316570D00BB7B93 /* Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
 		8AA61AD123165B8000BB7B93 /* BeepService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeepService.swift; sourceTree = "<group>"; };
+		F07E962C4A73F1E84A23ED43 /* Pods-Remote Log Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remote Log Client.debug.xcconfig"; path = "Target Support Files/Pods-Remote Log Client/Pods-Remote Log Client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,17 +36,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0932198D8403889CBEFB065 /* Pods_Remote_Log_Client.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30A88792A74FEA34DF2F34D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C5208565BA380EA5D9141CA /* Pods_Remote_Log_Client.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8AA61AAD2316487B00BB7B93 = {
 			isa = PBXGroup;
 			children = (
 				8AA61AB82316487B00BB7B93 /* Remote Log Client */,
 				8AA61AB72316487B00BB7B93 /* Products */,
+				93C877AF53E80ED6F80F43B7 /* Pods */,
+				30A88792A74FEA34DF2F34D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +84,16 @@
 			path = "Remote Log Client";
 			sourceTree = "<group>";
 		};
+		93C877AF53E80ED6F80F43B7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F07E962C4A73F1E84A23ED43 /* Pods-Remote Log Client.debug.xcconfig */,
+				205020729D29D07B38589A23 /* Pods-Remote Log Client.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -76,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AA61AC62316487D00BB7B93 /* Build configuration list for PBXNativeTarget "Remote Log Client" */;
 			buildPhases = (
+				9B490D161F3CD58D930AF675 /* [CP] Check Pods Manifest.lock */,
 				8AA61AB22316487B00BB7B93 /* Sources */,
 				8AA61AB32316487B00BB7B93 /* Frameworks */,
 				8AA61AB42316487B00BB7B93 /* Resources */,
+				046D8290E1ECC3505EA24A89 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,6 +165,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		046D8290E1ECC3505EA24A89 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Remote Log Client/Pods-Remote Log Client-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Remote Log Client/Pods-Remote Log Client-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Remote Log Client/Pods-Remote Log Client-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B490D161F3CD58D930AF675 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Remote Log Client-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8AA61AB22316487B00BB7B93 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		8AA61AC72316487D00BB7B93 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F07E962C4A73F1E84A23ED43 /* Pods-Remote Log Client.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +369,7 @@
 		};
 		8AA61AC82316487D00BB7B93 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 205020729D29D07B38589A23 /* Pods-Remote Log Client.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
