@@ -5,7 +5,7 @@ DEPENDENCIES:
   - MultiPeer
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - MultiPeer
 
 SPEC CHECKSUMS:
@@ -13,4 +13,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 69fddd019fac28d6785982f2968ae0ab88ed2ad0
 
-COCOAPODS: 1.7.0.beta.3
+COCOAPODS: 1.8.0.beta.2
