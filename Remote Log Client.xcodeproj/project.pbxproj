@@ -3,31 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A808F432316F66400B1A29F /* ClientListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A808F422316F66400B1A29F /* ClientListViewController.swift */; };
+		8A808F452316F70200B1A29F /* MessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A808F442316F70200B1A29F /* MessageType.swift */; };
+		8A808F472316F7C100B1A29F /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A808F462316F7C100B1A29F /* Client.swift */; };
+		8A808F6723171EED00B1A29F /* ClientInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A808F6623171EED00B1A29F /* ClientInfo.swift */; };
 		8AA61ABA2316487B00BB7B93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA61AB92316487B00BB7B93 /* AppDelegate.swift */; };
-		8AA61ABC2316487B00BB7B93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA61ABB2316487B00BB7B93 /* ViewController.swift */; };
 		8AA61ABE2316487D00BB7B93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AA61ABD2316487D00BB7B93 /* Assets.xcassets */; };
 		8AA61AC12316487D00BB7B93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AA61ABF2316487D00BB7B93 /* Main.storyboard */; };
-		8AA61ACE2316570D00BB7B93 /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA61ACD2316570D00BB7B93 /* Peer.swift */; };
-		8AA61AD223165B8000BB7B93 /* BeepService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA61AD123165B8000BB7B93 /* BeepService.swift */; };
 		E0932198D8403889CBEFB065 /* Pods_Remote_Log_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5208565BA380EA5D9141CA /* Pods_Remote_Log_Client.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		205020729D29D07B38589A23 /* Pods-Remote Log Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remote Log Client.release.xcconfig"; path = "Target Support Files/Pods-Remote Log Client/Pods-Remote Log Client.release.xcconfig"; sourceTree = "<group>"; };
 		5C5208565BA380EA5D9141CA /* Pods_Remote_Log_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Remote_Log_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A808F422316F66400B1A29F /* ClientListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientListViewController.swift; sourceTree = "<group>"; };
+		8A808F442316F70200B1A29F /* MessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageType.swift; sourceTree = "<group>"; };
+		8A808F462316F7C100B1A29F /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		8A808F6623171EED00B1A29F /* ClientInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientInfo.swift; sourceTree = "<group>"; };
 		8AA61AB62316487B00BB7B93 /* Remote Log Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Remote Log Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA61AB92316487B00BB7B93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8AA61ABB2316487B00BB7B93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8AA61ABD2316487D00BB7B93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AA61AC02316487D00BB7B93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8AA61AC22316487D00BB7B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AA61AC32316487D00BB7B93 /* Remote_Log_Client.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Remote_Log_Client.entitlements; sourceTree = "<group>"; };
-		8AA61ACD2316570D00BB7B93 /* Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
-		8AA61AD123165B8000BB7B93 /* BeepService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeepService.swift; sourceTree = "<group>"; };
 		F07E962C4A73F1E84A23ED43 /* Pods-Remote Log Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remote Log Client.debug.xcconfig"; path = "Target Support Files/Pods-Remote Log Client/Pods-Remote Log Client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,6 +51,26 @@
 				5C5208565BA380EA5D9141CA /* Pods_Remote_Log_Client.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A808F682317225E00B1A29F /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				8A808F442316F70200B1A29F /* MessageType.swift */,
+				8A808F462316F7C100B1A29F /* Client.swift */,
+				8A808F6623171EED00B1A29F /* ClientInfo.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		8A808F692317226800B1A29F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8AA61ABD2316487D00BB7B93 /* Assets.xcassets */,
+				8AA61AC22316487D00BB7B93 /* Info.plist */,
+				8AA61AC32316487D00BB7B93 /* Remote_Log_Client.entitlements */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		8AA61AAD2316487B00BB7B93 = {
@@ -73,13 +95,10 @@
 			isa = PBXGroup;
 			children = (
 				8AA61AB92316487B00BB7B93 /* AppDelegate.swift */,
-				8AA61ABB2316487B00BB7B93 /* ViewController.swift */,
-				8AA61ABD2316487D00BB7B93 /* Assets.xcassets */,
+				8A808F422316F66400B1A29F /* ClientListViewController.swift */,
 				8AA61ABF2316487D00BB7B93 /* Main.storyboard */,
-				8AA61AC22316487D00BB7B93 /* Info.plist */,
-				8AA61AC32316487D00BB7B93 /* Remote_Log_Client.entitlements */,
-				8AA61ACD2316570D00BB7B93 /* Peer.swift */,
-				8AA61AD123165B8000BB7B93 /* BeepService.swift */,
+				8A808F692317226800B1A29F /* Resources */,
+				8A808F682317225E00B1A29F /* Types */,
 			);
 			path = "Remote Log Client";
 			sourceTree = "<group>";
@@ -90,7 +109,6 @@
 				F07E962C4A73F1E84A23ED43 /* Pods-Remote Log Client.debug.xcconfig */,
 				205020729D29D07B38589A23 /* Pods-Remote Log Client.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -213,9 +231,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AA61ACE2316570D00BB7B93 /* Peer.swift in Sources */,
-				8AA61AD223165B8000BB7B93 /* BeepService.swift in Sources */,
-				8AA61ABC2316487B00BB7B93 /* ViewController.swift in Sources */,
+				8A808F472316F7C100B1A29F /* Client.swift in Sources */,
+				8A808F452316F70200B1A29F /* MessageType.swift in Sources */,
+				8A808F432316F66400B1A29F /* ClientListViewController.swift in Sources */,
+				8A808F6723171EED00B1A29F /* ClientInfo.swift in Sources */,
 				8AA61ABA2316487B00BB7B93 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,11 +375,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Remote Log Client/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Remote Log Client/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.er2.macOS-Utilities.Remote-Log-Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -374,11 +394,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Remote Log Client/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Remote Log Client/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.er2.macOS-Utilities.Remote-Log-Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

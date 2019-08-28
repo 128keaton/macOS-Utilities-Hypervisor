@@ -1,16 +1,22 @@
 PODS:
-  - MultiPeer (0.1.0)
+  - MultiPeer (0.1.1)
 
 DEPENDENCIES:
-  - MultiPeer
+  - MultiPeer (from `https://github.com/128keaton/MultiPeer.git`, tag `0.1.1`)
 
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - MultiPeer
+EXTERNAL SOURCES:
+  MultiPeer:
+    :git: https://github.com/128keaton/MultiPeer.git
+    :tag: 0.1.1
+
+CHECKOUT OPTIONS:
+  MultiPeer:
+    :git: https://github.com/128keaton/MultiPeer.git
+    :tag: 0.1.1
 
 SPEC CHECKSUMS:
-  MultiPeer: 8be1b3b47faa9d2e94b4c8c29a2d984eb0d68007
+  MultiPeer: 0d8af29187e36944e8694f53feac790498f459f4
 
-PODFILE CHECKSUM: 69fddd019fac28d6785982f2968ae0ab88ed2ad0
+PODFILE CHECKSUM: 5d217efb23700077770137d93bfd583f525fedd3
 
 COCOAPODS: 1.8.0.beta.2

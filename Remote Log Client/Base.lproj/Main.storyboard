@@ -684,11 +684,13 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titleVisibility="hidden" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="480" height="270"/>
+                        <value key="maxSize" type="size" width="480" height="270"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -701,22 +703,22 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Client List View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Remote_Log_Client" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ClientListViewController" customModule="Remote_Log_Client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0G-ro-sU0">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <rect key="frame" x="20" y="65" width="440" height="185"/>
                                 <clipView key="contentView" id="pdU-AR-a5w">
-                                    <rect key="frame" x="1" y="0.0" width="478" height="269"/>
+                                    <rect key="frame" x="1" y="0.0" width="438" height="184"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="7bc-kz-sAk" viewBased="YES" id="zc9-eW-zEr">
-                                            <rect key="frame" x="0.0" y="0.0" width="482" height="244"/>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="7bc-kz-sAk" viewBased="YES" id="zc9-eW-zEr">
+                                            <rect key="frame" x="0.0" y="0.0" width="440" height="159"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -759,7 +761,7 @@
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
-                                                <tableColumn identifier="ipAddress" width="358" minWidth="40" maxWidth="1000" id="vOq-O6-TGb">
+                                                <tableColumn identifier="ipAddress" width="316" minWidth="40" maxWidth="1000" id="vOq-O6-TGb">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="IP Address">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -773,11 +775,11 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="uwU-5q-AcV">
-                                                            <rect key="frame" x="122" y="1" width="358" height="17"/>
+                                                            <rect key="frame" x="122" y="1" width="316" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Med-7K-Z02">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="316" height="17"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" identifier="ipAddress" title="Table View Cell" id="vzw-sT-yg9">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -805,27 +807,68 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Xy4-PS-nI3">
-                                    <rect key="frame" x="1" y="253" width="478" height="16"/>
+                                    <rect key="frame" x="1" y="168" width="438" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="24z-yX-gnd">
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="24z-yX-gnd">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <tableHeaderView key="headerView" id="7bc-kz-sAk">
-                                    <rect key="frame" x="0.0" y="0.0" width="482" height="25"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="440" height="25"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0Ac-nN-gPs">
+                                <rect key="frame" x="385" y="13" width="81" height="32"/>
+                                <buttonCell key="cell" type="push" title="Locate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KSo-uA-HiB">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="sendBeepRequest:" target="XfG-lQ-9wD" id="aLG-Va-2KO"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="49h-kb-Oia">
+                                <rect key="frame" x="247" y="13" width="63" height="32"/>
+                                <buttonCell key="cell" type="push" title="Log" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hru-m0-igJ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="viewLog:" target="XfG-lQ-9wD" id="zDm-0b-aGh"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="G38-4x-hd2">
+                                <rect key="frame" x="315" y="13" width="70" height="32"/>
+                                <buttonCell key="cell" type="push" title="View" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YsA-2X-EzP">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="sendScreenSharingRequest:" target="XfG-lQ-9wD" id="Rj2-UR-4Af"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="n0G-ro-sU0" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="DUi-iq-86w"/>
-                            <constraint firstItem="n0G-ro-sU0" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="kFc-ye-jEX"/>
-                            <constraint firstItem="n0G-ro-sU0" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="pGV-JI-bp8"/>
-                            <constraint firstItem="n0G-ro-sU0" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="thJ-A9-UYK"/>
+                            <constraint firstItem="G38-4x-hd2" firstAttribute="leading" secondItem="49h-kb-Oia" secondAttribute="trailing" constant="17" id="13b-Ml-dtQ"/>
+                            <constraint firstItem="n0G-ro-sU0" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="7Tq-XQ-EHy"/>
+                            <constraint firstItem="49h-kb-Oia" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="BRU-pb-Vy8"/>
+                            <constraint firstItem="n0G-ro-sU0" firstAttribute="trailing" secondItem="0Ac-nN-gPs" secondAttribute="trailing" id="CKu-kb-q0e"/>
+                            <constraint firstItem="0Ac-nN-gPs" firstAttribute="leading" secondItem="G38-4x-hd2" secondAttribute="trailing" constant="12" id="FRY-V7-Rsm"/>
+                            <constraint firstItem="G38-4x-hd2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="OXK-cN-KOG"/>
+                            <constraint firstItem="n0G-ro-sU0" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="hCS-eh-HRc"/>
+                            <constraint firstItem="49h-kb-Oia" firstAttribute="baseline" secondItem="G38-4x-hd2" secondAttribute="baseline" id="hWI-rC-0LG"/>
+                            <constraint firstAttribute="trailing" secondItem="n0G-ro-sU0" secondAttribute="trailing" constant="20" symbolic="YES" id="j0T-z3-OPb"/>
+                            <constraint firstItem="G38-4x-hd2" firstAttribute="baseline" secondItem="0Ac-nN-gPs" secondAttribute="baseline" id="nHO-DY-naP"/>
+                            <constraint firstItem="G38-4x-hd2" firstAttribute="top" secondItem="n0G-ro-sU0" secondAttribute="bottom" constant="24" id="sZO-MW-CbV"/>
+                            <constraint firstAttribute="bottom" secondItem="G38-4x-hd2" secondAttribute="bottom" constant="20" symbolic="YES" id="wHQ-HB-P7w"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="logButton" destination="49h-kb-Oia" id="arI-8D-Dnd"/>
+                        <outlet property="sendBeepButton" destination="0Ac-nN-gPs" id="BPQ-2j-YR5"/>
+                        <outlet property="sendScreenSharingRequestButton" destination="G38-4x-hd2" id="bIe-mK-6Bp"/>
                         <outlet property="tableView" destination="zc9-eW-zEr" id="22H-Ax-wit"/>
                     </connections>
                 </viewController>
