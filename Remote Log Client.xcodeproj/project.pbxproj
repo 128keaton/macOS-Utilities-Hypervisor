@@ -11,6 +11,8 @@
 		8AA61ABC2316487B00BB7B93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA61ABB2316487B00BB7B93 /* ViewController.swift */; };
 		8AA61ABE2316487D00BB7B93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AA61ABD2316487D00BB7B93 /* Assets.xcassets */; };
 		8AA61AC12316487D00BB7B93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AA61ABF2316487D00BB7B93 /* Main.storyboard */; };
+		8AA61ACE2316570D00BB7B93 /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA61ACD2316570D00BB7B93 /* Peer.swift */; };
+		8AA61AD223165B8000BB7B93 /* BeepService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA61AD123165B8000BB7B93 /* BeepService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		8AA61AC02316487D00BB7B93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8AA61AC22316487D00BB7B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AA61AC32316487D00BB7B93 /* Remote_Log_Client.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Remote_Log_Client.entitlements; sourceTree = "<group>"; };
+		8AA61ACD2316570D00BB7B93 /* Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
+		8AA61AD123165B8000BB7B93 /* BeepService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeepService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				8AA61ABF2316487D00BB7B93 /* Main.storyboard */,
 				8AA61AC22316487D00BB7B93 /* Info.plist */,
 				8AA61AC32316487D00BB7B93 /* Remote_Log_Client.entitlements */,
+				8AA61ACD2316570D00BB7B93 /* Peer.swift */,
+				8AA61AD123165B8000BB7B93 /* BeepService.swift */,
 			);
 			path = "Remote Log Client";
 			sourceTree = "<group>";
@@ -95,6 +101,11 @@
 				TargetAttributes = {
 					8AA61AB52316487B00BB7B93 = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -133,6 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA61ACE2316570D00BB7B93 /* Peer.swift in Sources */,
+				8AA61AD223165B8000BB7B93 /* BeepService.swift in Sources */,
 				8AA61ABC2316487B00BB7B93 /* ViewController.swift in Sources */,
 				8AA61ABA2316487B00BB7B93 /* AppDelegate.swift in Sources */,
 			);
@@ -271,7 +284,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Remote Log Client/Remote_Log_Client.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Remote Log Client/Info.plist";
@@ -289,7 +301,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Remote Log Client/Remote_Log_Client.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Remote Log Client/Info.plist";
