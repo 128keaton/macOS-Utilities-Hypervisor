@@ -13,14 +13,16 @@ class Client {
     private (set) public var ipAddress: String
     private (set) public var modelIdentifier: String
     private (set) public var peer: Peer
-    
-    private var _serialNumber: String?
 
-    public var hasSerialNumber: (String) -> () = { _ in }
+    private var _serialNumber: String?
+    private var _status: String = "Connecting"
+
+    public var hasSerialNumber: [(String) -> ()] = []
+    public var statusUpdated: (String) -> () = { _ in }
 
     init(_ fromPeer: Peer) {
         self.peer = fromPeer
-        
+
         let splitPeerDisplayName = fromPeer.peerID.displayName.split(separator: ":")
 
         if (splitPeerDisplayName.indices.contains(0) && splitPeerDisplayName.indices.contains(1)) {
@@ -40,11 +42,21 @@ class Client {
             self._serialNumber = newValue
 
             if let validSerialNumber = newValue {
-                self.hasSerialNumber(validSerialNumber)
+                self.hasSerialNumber.forEach { $0(validSerialNumber) }
             }
         }
     }
-    
+
+    public var status: String {
+        get {
+            return self._status
+        }
+        set {
+            self._status = newValue
+            self.statusUpdated(newValue)
+        }
+    }
+
     public var displayName: String {
         get {
             return self.peer.peerID.displayName

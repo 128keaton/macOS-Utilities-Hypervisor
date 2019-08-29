@@ -11,11 +11,18 @@ import Cocoa
 import MultiPeer
 import MultipeerConnectivity
 
+public func log(_ items: Any..., separator: String = " ", terminator: String = "\n") {
+    let output = items.map { "\($0)" }.joined(separator: separator)
+    Swift.print(output, terminator: terminator)
+    XLSharedFacility.logMessage(output, withTag: nil, level: .logLevel_Info)
+}
+
+
 class ClientListViewController: NSViewController {
     @IBOutlet private var tableView: NSTableView!
-    @IBOutlet private var logButton: NSButton!
-    @IBOutlet private var sendBeepButton: NSButton!
-    @IBOutlet private var sendScreenSharingRequestButton: NSButton!
+    @IBOutlet private var segmentedControl: NSSegmentedControl!
+    @IBOutlet private var progressIndicator: NSProgressIndicator!
+    @IBOutlet private var foundCountLabel: NSTextField!
 
     private var currentClients: [Client] = []
     private var selectedClient: Client? = nil
@@ -26,6 +33,8 @@ class ClientListViewController: NSViewController {
         super.viewDidLoad()
 
         self.buttonsEnabled = false
+        self.foundCountLabel.stringValue = "\(self.currentClients.count) Found"
+        self.progressIndicator.startAnimation(self)
 
         setupTableView()
         setupMultiPeer()
@@ -45,33 +54,33 @@ class ClientListViewController: NSViewController {
 
     private var buttonsEnabled: Bool {
         set {
-            self.sendBeepButton.isEnabled = newValue
-            self.sendScreenSharingRequestButton.isEnabled = newValue
-            self.logButton.isEnabled = newValue
+            self.segmentedControl.setEnabled(newValue, forSegment: 0)
+            self.segmentedControl.setEnabled(newValue, forSegment: 1)
+            self.segmentedControl.setEnabled(newValue, forSegment: 2)
         }
         get {
-            return (self.sendBeepButton.isEnabled && self.sendScreenSharingRequestButton.isEnabled && self.logButton.isEnabled)
+            return (self.segmentedControl.isEnabled(forSegment: 0) && self.segmentedControl.isEnabled(forSegment: 1) && self.segmentedControl.isEnabled(forSegment: 2))
         }
     }
 
-    @IBAction private func sendScreenSharingRequest(_ sender: NSButton) {
-    }
-
-    @IBAction private func sendBeepRequest(_ sender: NSButton) {
+    @IBAction private func segmentClicked(_ sender: NSSegmentedControl) {
         guard let validSelectedClient = self.selectedClient else {
             return
         }
 
-        MultiPeer.instance.send(object: MultiPeer.instance.devicePeerID!, type: MessageType.locateRequest.rawValue, toPeer: validSelectedClient.peer)
-    }
-
-    @IBAction private func viewLog(_ sender: NSButton) {
-        guard let validSelectedClient = self.selectedClient else {
-            return
+        switch sender.indexOfSelectedItem {
+        case 0:
+            MultiPeer.instance.send(object: MultiPeer.instance.devicePeerID!, type: MessageType.locateRequest.rawValue, toPeer: validSelectedClient.peer)
+            break
+        case 1:
+            NSWorkspace.shared.open(URL(string: "vnc://\(validSelectedClient.ipAddress)")!)
+            break
+        case 2:
+            NSWorkspace.shared.open(URL(string: "http://\(validSelectedClient.ipAddress):8080")!)
+            break
+        default:
+            break
         }
-
-        NSWorkspace.shared.open(URL(string: "http://\(validSelectedClient.ipAddress):8080")!)
-        print("view Log")
     }
 }
 
@@ -84,24 +93,32 @@ extension ClientListViewController: NSTableViewDelegate, NSTableViewDataSource {
         if self.currentClients.indices.contains(row) {
             let client = self.currentClients[row]
 
-            let cell = tableView.makeView(withIdentifier: tableColumn!.identifier, owner: self) as? NSTableCellView
+            var cell: NSTableCellView?
 
 
-            if tableColumn!.identifier.rawValue == "modelIdentifier" {
-                cell?.textField?.stringValue = client.modelIdentifier
-            } else {
+            if tableColumn!.identifier.rawValue == "configurationCode" {
+                cell = tableView.makeView(withIdentifier: tableColumn!.identifier, owner: self) as? ConfigurationCodeCell
+                (cell as! ConfigurationCodeCell).client = client
+            } else if tableColumn!.identifier.rawValue == "ipAddress" {
+                cell = tableView.makeView(withIdentifier: tableColumn!.identifier, owner: self) as? NSTableCellView
                 cell?.textField?.stringValue = client.ipAddress
+            } else if tableColumn!.identifier.rawValue == "serialNumber" {
+                cell = tableView.makeView(withIdentifier: tableColumn!.identifier, owner: self) as? SerialNumberCell
+                (cell as! SerialNumberCell).client = client
+            } else {
+                cell = tableView.makeView(withIdentifier: tableColumn!.identifier, owner: self) as? StatusCell
+                (cell as! StatusCell).client = client
             }
-            
+
             return cell
         }
-        
+
         return nil
     }
 
     func tableViewSelectionDidChange(_ notification: Notification) {
         let selectedRow = self.tableView.selectedRow
-        print(selectedRow)
+
         if (self.currentClients.indices.contains(selectedRow)) {
             self.buttonsEnabled = true
             self.selectedClient = self.currentClients[selectedRow]
@@ -120,7 +137,7 @@ extension ClientListViewController: MultiPeerDelegate {
     func multiPeer(didReceiveData data: Data, ofType type: UInt32) {
         switch type {
         case MessageType.locateResponse.rawValue:
-            print("locateResponse")
+            log("locateResponse")
             break
 
         case MessageType.clientInfoResponse.rawValue:
@@ -133,13 +150,14 @@ extension ClientListViewController: MultiPeerDelegate {
                 returnedClientInfo = NSKeyedUnarchiver.unarchiveObject(with: data) as! ClientInfo
             }
 
-            print("Received serial number response: \(returnedClientInfo.serialNumber!)")
+            log("Received serial number response: \(returnedClientInfo.serialNumber!)")
 
             if let matchedClient = self.currentClients.first(where: { (client) -> Bool in
                 client.peer.peerID == returnedClientInfo.peerID
             }) {
                 matchedClient.serialNumber = returnedClientInfo.serialNumber
-                print("Updated client: \(matchedClient.serialNumber!)")
+                matchedClient.status = returnedClientInfo.status ?? "Unknown"
+                log("Updated client: \(matchedClient.serialNumber!) - \(matchedClient.status)")
             }
             break
 
@@ -164,7 +182,12 @@ extension ClientListViewController: MultiPeerDelegate {
         }
 
         DispatchQueue.main.async {
+            self.foundCountLabel.stringValue = "\(self.currentClients.count) Found"
             self.tableView.reloadData()
+
+            if (self.currentClients.count == 0) {
+                self.buttonsEnabled = false
+            }
         }
 
     }

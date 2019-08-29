@@ -1,22 +1,55 @@
 PODS:
-  - MultiPeer (0.1.1)
+  - Alamofire (4.8.2)
+  - MultiPeer (0.1.2)
+  - XLFacility (1.5.18):
+    - XLFacility/Core (= 1.5.18)
+    - XLFacility/GCDNetworking (= 1.5.18)
+    - XLFacility/GCDTelnetServer (= 1.5.18)
+    - XLFacility/Networking (= 1.5.18)
+    - XLFacility/UserInterface (= 1.5.18)
+  - XLFacility/Core (1.5.18)
+  - XLFacility/GCDNetworking (1.5.18)
+  - XLFacility/GCDTelnetServer (1.5.18):
+    - XLFacility/GCDNetworking
+  - XLFacility/Networking (1.5.18):
+    - XLFacility/Core
+    - XLFacility/GCDTelnetServer
+  - XLFacility/UserInterface (1.5.18):
+    - XLFacility/Core
+  - XMLParsing (0.0.3)
 
 DEPENDENCIES:
-  - MultiPeer (from `https://github.com/128keaton/MultiPeer.git`, tag `0.1.1`)
+  - Alamofire
+  - MultiPeer (from `https://github.com/128keaton/MultiPeer.git`, tag `0.1.2`)
+  - XLFacility (~> 1.0)
+  - XMLParsing (from `https://github.com/128keaton/XMLParsing.git`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - XLFacility
 
 EXTERNAL SOURCES:
   MultiPeer:
     :git: https://github.com/128keaton/MultiPeer.git
-    :tag: 0.1.1
+    :tag: 0.1.2
+  XMLParsing:
+    :git: https://github.com/128keaton/XMLParsing.git
 
 CHECKOUT OPTIONS:
   MultiPeer:
     :git: https://github.com/128keaton/MultiPeer.git
-    :tag: 0.1.1
+    :tag: 0.1.2
+  XMLParsing:
+    :commit: f173abf8f782bd7072b0b423aa154358ef6a7ae7
+    :git: https://github.com/128keaton/XMLParsing.git
 
 SPEC CHECKSUMS:
-  MultiPeer: 0d8af29187e36944e8694f53feac790498f459f4
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  MultiPeer: f28c91b749ad595e02283a2822334ff8f6fb5059
+  XLFacility: f24747c4f586372bddae3525d837ef42b0e26339
+  XMLParsing: 5b2e061ac61c95eb246f169f89ffb049f8bff668
 
-PODFILE CHECKSUM: 5d217efb23700077770137d93bfd583f525fedd3
+PODFILE CHECKSUM: 5fcceb9d3a9e17cb95b7498524d87d22d5bbe206
 
 COCOAPODS: 1.8.0.beta.2

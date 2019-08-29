@@ -14,6 +14,7 @@ public class ClientInfo:  NSObject, NSCoding, NSSecureCoding {
     
     var serialNumber: String?
     var peerID: MCPeerID?
+    var status: String?
     
     init(serialNumber: String, peerID: MCPeerID) {
         self.serialNumber = serialNumber
@@ -23,10 +24,12 @@ public class ClientInfo:  NSObject, NSCoding, NSSecureCoding {
     required public init(coder decoder: NSCoder) {
         self.serialNumber = decoder.decodeObject(forKey: "serialNumber") as? String
         self.peerID = decoder.decodeObject(forKey: "peerID") as? MCPeerID
+        self.status = decoder.decodeObject(forKey: "status") as? String
     }
     
     public func encode(with coder: NSCoder) {
         coder.encode(serialNumber, forKey: "serialNumber")
         coder.encode(peerID, forKey: "peerID")
+        coder.encode(status, forKey: "status")
     }
 }
