@@ -1,6 +1,6 @@
 //
 //  StatusCell.swift
-//  Remote Log Client
+//  macOS Utilities: Hypervisor
 //
 //  Created by Keaton Burleson on 8/28/19.
 //  Copyright © 2019 Keaton Burleson. All rights reserved.

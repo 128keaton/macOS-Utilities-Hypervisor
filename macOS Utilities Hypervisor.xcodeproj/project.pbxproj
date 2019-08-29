@@ -20,12 +20,13 @@
 		8AA61ABA2316487B00BB7B93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA61AB92316487B00BB7B93 /* AppDelegate.swift */; };
 		8AA61ABE2316487D00BB7B93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AA61ABD2316487D00BB7B93 /* Assets.xcassets */; };
 		8AA61AC12316487D00BB7B93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AA61ABF2316487D00BB7B93 /* Main.storyboard */; };
-		E0932198D8403889CBEFB065 /* Pods_Remote_Log_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5208565BA380EA5D9141CA /* Pods_Remote_Log_Client.framework */; };
+		D486BC26CC2D5B8D094424BB /* Pods_macOS_Utilities_Hypervisor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA462F550B5DD6F8150CD74 /* Pods_macOS_Utilities_Hypervisor.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1542741CC53022F72607A79F /* Pods-macOS Utilities: Hypervisor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS Utilities: Hypervisor.release.xcconfig"; path = "Target Support Files/Pods-macOS Utilities: Hypervisor/Pods-macOS Utilities: Hypervisor.release.xcconfig"; sourceTree = "<group>"; };
 		205020729D29D07B38589A23 /* Pods-Remote Log Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remote Log Client.release.xcconfig"; path = "Target Support Files/Pods-Remote Log Client/Pods-Remote Log Client.release.xcconfig"; sourceTree = "<group>"; };
-		5C5208565BA380EA5D9141CA /* Pods_Remote_Log_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Remote_Log_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48BCFB19EE9C054A961E23BA /* Pods-macOS Utilities Hypervisor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS Utilities Hypervisor.release.xcconfig"; path = "Target Support Files/Pods-macOS Utilities Hypervisor/Pods-macOS Utilities Hypervisor.release.xcconfig"; sourceTree = "<group>"; };
 		8A808F422316F66400B1A29F /* ClientListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientListViewController.swift; sourceTree = "<group>"; };
 		8A808F442316F70200B1A29F /* MessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageType.swift; sourceTree = "<group>"; };
 		8A808F462316F7C100B1A29F /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
@@ -37,13 +38,16 @@
 		8A81F85423177366005917BA /* XLOverlayLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XLOverlayLog.swift; sourceTree = "<group>"; };
 		8A81F856231773A1005917BA /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		8A81F8592317796D005917BA /* StatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
-		8AA61AB62316487B00BB7B93 /* macOS Utilities: Hypervisor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macOS Utilities: Hypervisor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AA61AB62316487B00BB7B93 /* macOS Utilities Hypervisor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macOS Utilities Hypervisor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA61AB92316487B00BB7B93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AA61ABD2316487D00BB7B93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AA61AC02316487D00BB7B93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8AA61AC22316487D00BB7B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AA61AC32316487D00BB7B93 /* Remote_Log_Client.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Remote_Log_Client.entitlements; sourceTree = "<group>"; };
+		9CCF54592D302CED50D742F6 /* Pods-macOS Utilities: Hypervisor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS Utilities: Hypervisor.debug.xcconfig"; path = "Target Support Files/Pods-macOS Utilities: Hypervisor/Pods-macOS Utilities: Hypervisor.debug.xcconfig"; sourceTree = "<group>"; };
+		E8599BA55B3FE0D888533231 /* Pods-macOS Utilities Hypervisor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS Utilities Hypervisor.debug.xcconfig"; path = "Target Support Files/Pods-macOS Utilities Hypervisor/Pods-macOS Utilities Hypervisor.debug.xcconfig"; sourceTree = "<group>"; };
 		F07E962C4A73F1E84A23ED43 /* Pods-Remote Log Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remote Log Client.debug.xcconfig"; path = "Target Support Files/Pods-Remote Log Client/Pods-Remote Log Client.debug.xcconfig"; sourceTree = "<group>"; };
+		FFA462F550B5DD6F8150CD74 /* Pods_macOS_Utilities_Hypervisor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS_Utilities_Hypervisor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0932198D8403889CBEFB065 /* Pods_Remote_Log_Client.framework in Frameworks */,
+				D486BC26CC2D5B8D094424BB /* Pods_macOS_Utilities_Hypervisor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +65,7 @@
 		30A88792A74FEA34DF2F34D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5C5208565BA380EA5D9141CA /* Pods_Remote_Log_Client.framework */,
+				FFA462F550B5DD6F8150CD74 /* Pods_macOS_Utilities_Hypervisor.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -109,7 +113,7 @@
 		8AA61AAD2316487B00BB7B93 = {
 			isa = PBXGroup;
 			children = (
-				8AA61AB82316487B00BB7B93 /* Remote Log Client */,
+				8AA61AB82316487B00BB7B93 /* macOS Utilities Hypervisor */,
 				8AA61AB72316487B00BB7B93 /* Products */,
 				93C877AF53E80ED6F80F43B7 /* Pods */,
 				30A88792A74FEA34DF2F34D6 /* Frameworks */,
@@ -119,12 +123,12 @@
 		8AA61AB72316487B00BB7B93 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8AA61AB62316487B00BB7B93 /* macOS Utilities: Hypervisor.app */,
+				8AA61AB62316487B00BB7B93 /* macOS Utilities Hypervisor.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8AA61AB82316487B00BB7B93 /* Remote Log Client */ = {
+		8AA61AB82316487B00BB7B93 /* macOS Utilities Hypervisor */ = {
 			isa = PBXGroup;
 			children = (
 				8AA61AB92316487B00BB7B93 /* AppDelegate.swift */,
@@ -136,7 +140,7 @@
 				8A81F857231773DE005917BA /* Cells */,
 				8A81F858231773E8005917BA /* Misc */,
 			);
-			path = "Remote Log Client";
+			path = "macOS Utilities Hypervisor";
 			sourceTree = "<group>";
 		};
 		93C877AF53E80ED6F80F43B7 /* Pods */ = {
@@ -144,6 +148,10 @@
 			children = (
 				F07E962C4A73F1E84A23ED43 /* Pods-Remote Log Client.debug.xcconfig */,
 				205020729D29D07B38589A23 /* Pods-Remote Log Client.release.xcconfig */,
+				9CCF54592D302CED50D742F6 /* Pods-macOS Utilities: Hypervisor.debug.xcconfig */,
+				1542741CC53022F72607A79F /* Pods-macOS Utilities: Hypervisor.release.xcconfig */,
+				E8599BA55B3FE0D888533231 /* Pods-macOS Utilities Hypervisor.debug.xcconfig */,
+				48BCFB19EE9C054A961E23BA /* Pods-macOS Utilities Hypervisor.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -151,9 +159,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8AA61AB52316487B00BB7B93 /* macOS Utilities: Hypervisor */ = {
+		8AA61AB52316487B00BB7B93 /* macOS Utilities Hypervisor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8AA61AC62316487D00BB7B93 /* Build configuration list for PBXNativeTarget "macOS Utilities: Hypervisor" */;
+			buildConfigurationList = 8AA61AC62316487D00BB7B93 /* Build configuration list for PBXNativeTarget "macOS Utilities Hypervisor" */;
 			buildPhases = (
 				9B490D161F3CD58D930AF675 /* [CP] Check Pods Manifest.lock */,
 				8AA61AB22316487B00BB7B93 /* Sources */,
@@ -165,9 +173,9 @@
 			);
 			dependencies = (
 			);
-			name = "macOS Utilities: Hypervisor";
+			name = "macOS Utilities Hypervisor";
 			productName = "Remote Log Client";
-			productReference = 8AA61AB62316487B00BB7B93 /* macOS Utilities: Hypervisor.app */;
+			productReference = 8AA61AB62316487B00BB7B93 /* macOS Utilities Hypervisor.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -203,7 +211,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8AA61AB52316487B00BB7B93 /* macOS Utilities: Hypervisor */,
+				8AA61AB52316487B00BB7B93 /* macOS Utilities Hypervisor */,
 			);
 		};
 /* End PBXProject section */
@@ -227,15 +235,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Remote Log Client/Pods-Remote Log Client-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-macOS Utilities Hypervisor/Pods-macOS Utilities Hypervisor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Remote Log Client/Pods-Remote Log Client-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-macOS Utilities Hypervisor/Pods-macOS Utilities Hypervisor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Remote Log Client/Pods-Remote Log Client-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-macOS Utilities Hypervisor/Pods-macOS Utilities Hypervisor-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9B490D161F3CD58D930AF675 /* [CP] Check Pods Manifest.lock */ = {
@@ -253,7 +261,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Remote Log Client-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-macOS Utilities Hypervisor-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -412,13 +420,13 @@
 		};
 		8AA61AC72316487D00BB7B93 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F07E962C4A73F1E84A23ED43 /* Pods-Remote Log Client.debug.xcconfig */;
+			baseConfigurationReference = E8599BA55B3FE0D888533231 /* Pods-macOS Utilities Hypervisor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_ACTIVITY_MODE = enable;
-				INFOPLIST_FILE = "$(SRCROOT)/Remote Log Client/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/macOS Utilities Hypervisor/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -426,20 +434,20 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.er2.macOS-Utilities.Hypervisor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Remote Log Client/BridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "macOS Utilities Hypervisor/BridgingHeader.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		8AA61AC82316487D00BB7B93 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 205020729D29D07B38589A23 /* Pods-Remote Log Client.release.xcconfig */;
+			baseConfigurationReference = 48BCFB19EE9C054A961E23BA /* Pods-macOS Utilities Hypervisor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_ACTIVITY_MODE = disable;
-				INFOPLIST_FILE = "$(SRCROOT)/Remote Log Client/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/macOS Utilities Hypervisor/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -447,7 +455,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.er2.macOS-Utilities.Hypervisor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Remote Log Client/BridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "macOS Utilities Hypervisor/BridgingHeader.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -464,7 +472,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8AA61AC62316487D00BB7B93 /* Build configuration list for PBXNativeTarget "macOS Utilities: Hypervisor" */ = {
+		8AA61AC62316487D00BB7B93 /* Build configuration list for PBXNativeTarget "macOS Utilities Hypervisor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8AA61AC72316487D00BB7B93 /* Debug */,

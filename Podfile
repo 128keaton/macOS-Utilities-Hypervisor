@@ -2,7 +2,7 @@
 platform :osx, '10.12'
 inhibit_all_warnings!
 
-target 'Remote Log Client' do
+target 'macOS Utilities Hypervisor' do
   use_frameworks!
 
   pod 'XMLParsing', :git => 'https://github.com/128keaton/XMLParsing.git'
