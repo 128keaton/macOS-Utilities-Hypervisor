@@ -24,6 +24,7 @@ class ClientListViewController: NSViewController {
     @IBOutlet private var progressIndicator: NSProgressIndicator!
     @IBOutlet private var foundCountLabel: NSTextField!
 
+    private var pendingClients: [Client] = []
     private var currentClients: [Client] = []
     private var selectedClient: Client? = nil
 
@@ -131,6 +132,22 @@ extension ClientListViewController: NSTableViewDelegate, NSTableViewDataSource {
             self.selectedClient = nil
         }
     }
+
+    func addClient(_ client: Client) {
+        self.currentClients.append(client)
+        self.currentClientsUpdated()
+    }
+
+    func currentClientsUpdated() {
+        DispatchQueue.main.async {
+            self.foundCountLabel.stringValue = "\(self.currentClients.count) Found"
+            self.tableView.reloadData()
+
+            if (self.currentClients.count == 0) {
+                self.buttonsEnabled = false
+            }
+        }
+    }
 }
 
 extension ClientListViewController: MultiPeerDelegate {
@@ -152,13 +169,30 @@ extension ClientListViewController: MultiPeerDelegate {
 
             log("Received serial number response: \(returnedClientInfo.serialNumber!)")
 
-            if let matchedClient = self.currentClients.first(where: { (client) -> Bool in
+            if let existingClient = self.currentClients.first(where: { (client) -> Bool in
+                client.peer.peerID == returnedClientInfo.peerID ||
+                    (client.serialNumber != nil
+                        && returnedClientInfo.serialNumber != nil
+                        && client.serialNumber! == returnedClientInfo.serialNumber!)
+            }) {
+                existingClient.serialNumber = returnedClientInfo.serialNumber
+                existingClient.status = returnedClientInfo.status ?? "Unknown"
+
+                log("Updated client: \(existingClient.serialNumber!) - \(existingClient.status)")
+            } else if let matchedClient = self.pendingClients.first(where: { (client) -> Bool in
                 client.peer.peerID == returnedClientInfo.peerID
             }) {
                 matchedClient.serialNumber = returnedClientInfo.serialNumber
                 matchedClient.status = returnedClientInfo.status ?? "Unknown"
-                log("Updated client: \(matchedClient.serialNumber!) - \(matchedClient.status)")
+
+                log("Added client: \(matchedClient.serialNumber!) - \(matchedClient.status)")
+
+                self.addClient(matchedClient)
+                self.pendingClients.removeAll { (aClient: Client) in
+                    return aClient == matchedClient
+                }
             }
+
             break
 
         default:
@@ -167,29 +201,24 @@ extension ClientListViewController: MultiPeerDelegate {
     }
 
     func multiPeer(connectedPeersChanged peers: [Peer]) {
-        queue.sync {
-            if peers.count > 0 {
-                peers.forEach { peer in
-                    self.currentClients.removeAll { $0.peer.peerID == peer.peerID }
-                    self.currentClients.append(Client(peer))
+        log("Peers connected changed: \(peers)")
+        if peers.count > 0 {
+            peers.forEach { peer in
+                if peer.state == .connected {
+                    self.pendingClients.append(Client(peer))
 
                     MultiPeer.instance.send(object: MultiPeer.instance.devicePeerID!, type: MessageType.clientInfoRequest.rawValue, toPeer: peer)
+                } else if peer.state == .notConnected {
+                    self.currentClients.removeAll { $0.peer.peerID == peer.peerID }
+                    self.pendingClients.removeAll { $0.peer.peerID == peer.peerID }
+                } else {
+                    log("Peer is currently connecting: \(peer.peerID.displayName)")
                 }
-            } else {
-                self.currentClients = []
             }
-
+        } else {
+            self.currentClients = []
+            self.currentClientsUpdated()
         }
-
-        DispatchQueue.main.async {
-            self.foundCountLabel.stringValue = "\(self.currentClients.count) Found"
-            self.tableView.reloadData()
-
-            if (self.currentClients.count == 0) {
-                self.buttonsEnabled = false
-            }
-        }
-
     }
 }
 

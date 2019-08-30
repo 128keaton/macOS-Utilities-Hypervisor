@@ -23,6 +23,11 @@ class StatusCell: NSTableCellView {
                 return
             }
             
+            if validClient.status != "Unknown" {
+                self.statusLabel.stringValue = validClient.status
+                self.statusLabel.textColor = NSColor.labelColor
+            }
+            
             validClient.statusUpdated = { status in
                 self.statusLabel.stringValue = status
                 self.statusLabel.textColor = NSColor.labelColor

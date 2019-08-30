@@ -9,7 +9,11 @@
 import Foundation
 import MultiPeer
 
-class Client {
+class Client: Equatable {
+    static func == (lhs: Client, rhs: Client) -> Bool {
+        return lhs.peer.peerID == rhs.peer.peerID
+    }
+    
     private (set) public var ipAddress: String
     private (set) public var modelIdentifier: String
     private (set) public var peer: Peer
