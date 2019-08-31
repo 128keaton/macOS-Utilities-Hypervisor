@@ -28,6 +28,7 @@ class ClientListViewController: NSViewController {
     private var currentClients: [Client] = []
     private var selectedClient: Client? = nil
 
+    private let notificationCenter = NSUserNotificationCenter.default
     private let queue = DispatchQueue(label: "com.er2.macOS-Utilities.RemoteLogClient.ClientQueue")
 
     override func viewDidLoad() {
@@ -36,6 +37,7 @@ class ClientListViewController: NSViewController {
         self.buttonsEnabled = false
         self.foundCountLabel.stringValue = "\(self.currentClients.count) Found"
         self.progressIndicator.startAnimation(self)
+        self.notificationCenter.delegate = self
 
         setupTableView()
         setupMultiPeer()
@@ -53,6 +55,15 @@ class ClientListViewController: NSViewController {
         tableView.dataSource = self
     }
 
+    private func createSoundPlayedNotification(forDeviceName deviceName: String) {
+        let notification = NSUserNotification()
+        
+        notification.title = "macOS Utilities Hypervisor"
+        notification.subtitle = "A sound was played on \(deviceName)"
+        
+        notificationCenter.deliver(notification)
+    }
+    
     private var buttonsEnabled: Bool {
         set {
             self.segmentedControl.setEnabled(newValue, forSegment: 0)
@@ -145,6 +156,9 @@ extension ClientListViewController: NSTableViewDelegate, NSTableViewDataSource {
 
             if (self.currentClients.count == 0) {
                 self.buttonsEnabled = false
+                NSApp.dockTile.badgeLabel = nil
+            } else {
+                NSApp.dockTile.badgeLabel = "\(self.currentClients.count)"
             }
         }
     }
@@ -155,6 +169,19 @@ extension ClientListViewController: MultiPeerDelegate {
         switch type {
         case MessageType.locateResponse.rawValue:
             log("locateResponse")
+            
+            var currentPeer: MCPeerID
+            
+            if #available(OSX 10.13, *) {
+                currentPeer = try! NSKeyedUnarchiver.unarchivedObject(ofClasses: [MCPeerID.self], from: data)! as! MCPeerID
+            } else {
+                currentPeer = NSKeyedUnarchiver.unarchiveObject(with: data) as! MCPeerID
+            }
+            
+            if let existingClient = self.currentClients.first(where: { $0.peer.peerID == currentPeer }) {
+                self.createSoundPlayedNotification(forDeviceName: existingClient.modelIdentifier)
+            }
+            
             break
 
         case MessageType.clientInfoResponse.rawValue:
@@ -222,4 +249,8 @@ extension ClientListViewController: MultiPeerDelegate {
     }
 }
 
-
+extension ClientListViewController: NSUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: NSUserNotificationCenter, shouldPresent notification: NSUserNotification) -> Bool {
+        return true
+    }
+}

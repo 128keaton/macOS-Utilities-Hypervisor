@@ -423,6 +423,7 @@
 			baseConfigurationReference = E8599BA55B3FE0D888533231 /* Pods-macOS Utilities Hypervisor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_ACTIVITY_MODE = enable;
@@ -444,6 +445,7 @@
 			baseConfigurationReference = 48BCFB19EE9C054A961E23BA /* Pods-macOS Utilities Hypervisor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_ACTIVITY_MODE = disable;
